@@ -1,13 +1,12 @@
 {
   "expo": {
-    "name": "Todo",
+    "name": "Redux Observable Todo",
     "slug": "redux-observable-todo",
     "privacy": "public",
     "sdkVersion": "34.0.0",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,10 +20,12 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "./assets/*"
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Sample app for blog post \"Building reactive apps with Redux and Redux-Observable\"\nSource Code: https://github.com/sourabhv/redux-observable-todo",
+    "githubUrl": "https://github.com/sourabhv/redux-observable-todo"
   }
 }
