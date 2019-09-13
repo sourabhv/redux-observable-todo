@@ -16,7 +16,8 @@
     "react-native-web": "^0.11.4",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
-    "redux-observable": "^1.1.0"
+    "redux-observable": "^1.1.0",
+    "rxjs": "^6.5.3"
   },
   "devDependencies": {
     "babel-preset-expo": "^6.0.0"

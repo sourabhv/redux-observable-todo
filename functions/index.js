@@ -18,7 +18,7 @@ app.use(
 app.get("/user", (req, res) => {
   res.status(200).send({
     id: "123",
-    username: "John Doe",
+    name: "John Doe",
     email: "foo@example.com"
   });
 });

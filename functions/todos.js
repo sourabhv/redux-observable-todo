@@ -10,7 +10,13 @@ router.get("/", async (req, res) => {
     id: doc.id,
     ...doc.data()
   }));
-  res.status(200).send({ todos });
+  if (todos.length > 20) {
+    await todosRef.doc(todos[0].id).delete();
+    const remainingTodos = todos.slice(1);
+    res.status(200).send({ todos: remainingTodos });
+  } else {
+    res.status(200).send({ todos });
+  }
 });
 
 router.post("/", async (req, res) => {
@@ -30,7 +36,8 @@ router.post("/", async (req, res) => {
 router.post("/:id/complete", async (req, res) => {
   const id = req.params.id;
   await todosRef.doc(id).update({ completed: true });
-  res.status(200).send();
+  const todo = (await todosRef.doc(id).get()).data();
+  res.status(200).send({ id, ...todo });
 });
 
 module.exports = router;

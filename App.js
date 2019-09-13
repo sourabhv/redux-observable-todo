@@ -1,25 +1,28 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { Provider } from "react-redux";
+import { store } from "./src/store/store";
+import Header from "./src/components/Header";
+import TodoList from "./src/components/TodoList";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text
-        style={{ flex: 1, color: "white", fontWeight: "100", fontSize: 24 }}
-      >
-        Open up App.js to start working on your appu!
-      </Text>
-    </View>
+    <Provider store={store}>
+      <View style={styles.container}>
+        <Header />
+        <TodoList style={styles.todoList} />
+      </View>
+    </Provider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 32,
-    flexDirection: "row",
-    backgroundColor: "fuchsia",
-    alignItems: "center",
-    justifyContent: "center"
+    flexDirection: "column",
+    alignItems: "stretch"
+  },
+  todoList: {
+    flex: 1
   }
 });
